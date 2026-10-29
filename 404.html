@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbf6f2">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>SOFWAH MIRAX</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MIRAX">
+<style>
+html,body{margin:0;height:100%;background:#fbf6f2;color:#1e2a4a;font-family:Poppins,Arial,system-ui,sans-serif;overflow:hidden}
+body{background:radial-gradient(800px 600px at 0 0,rgba(214,198,255,.4),transparent 60%),radial-gradient(800px 600px at 100% 0,rgba(255,206,170,.55),transparent 60%),#fbf6f2}
+iframe{position:fixed;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .4s}
+iframe.on{opacity:1}
+.load{position:fixed;inset:0;display:grid;place-items:center;text-align:center}
+.load img{width:72px;height:72px;border-radius:22px;box-shadow:0 14px 34px rgba(217,82,10,.35);animation:p 1.6s ease-in-out infinite}
+.load b{display:block;margin-top:16px;letter-spacing:.4em;font-size:18px;padding-left:.4em}
+.load small{display:block;color:#c4500a;letter-spacing:.2em;font-size:10.5px;margin-top:4px;font-weight:600}
+.load p{color:#8a93ab;font-size:12px;margin-top:22px;max-width:300px}
+.load a{color:#c4500a}
+@keyframes p{50%{transform:scale(1.06)}}
+</style>
+</head>
+<body>
+<div class="load" id="ld"><div><img src="/icons/icon-192.png" alt=""><b>MIRAX</b><small>SOFWAH · DIGITAL &amp; BRAND HUB</small><p id="msg">Memuatkan…</p></div></div>
+<iframe id="app" title="SOFWAH MIRAX" allow="clipboard-write; fullscreen" allowfullscreen referrerpolicy="no-referrer"></iframe>
+<script>
+(function () {
+  var EXEC = 'https://script.google.com/macros/s/AKfycbwSMN6dPCQrccg1plzyObHUFi1ceVOcb0E4m-DUheGLN5I8kjhVdXbbIqlzCQIST6B4/exec';
+  var f = document.getElementById('app'), ld = document.getElementById('ld');
+  var pg = (location.search.match(/[?&]page=([a-z]{1,12})/) || [])[1] || '';
+  f.src = EXEC + (pg ? '?page=' + pg : '');
+  f.onload = function () { f.className = 'on'; setTimeout(function () { ld.style.display = 'none'; }, 400); };
+  setTimeout(function () { if (f.className !== 'on') document.getElementById('msg').innerHTML = 'Sambungan perlahan. <a href="' + f.src + '" rel="noopener">Buka terus</a> atau muat semula.'; }, 15000);
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(function () {});
+})();
+</script>
+</body>
+</html>

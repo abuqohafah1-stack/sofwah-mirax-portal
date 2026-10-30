@@ -7,13 +7,39 @@
   "display": "standalone",
   "background_color": "#070d1a",
   "theme_color": "#070d1a",
-  "lang": "ms",
+  "lang": "en",
   "icons": [
-    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
-    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ],
   "shortcuts": [
-    { "name": "Review Google", "url": "/?page=reviews" },
-    { "name": "Pantau Iklan Live", "url": "/?page=live" }
+    {
+      "name": "Google Reviews",
+      "url": "/?page=reviews"
+    },
+    {
+      "name": "Live Ad Monitor",
+      "url": "/?page=live"
+    },
+    {
+      "name": "Action Center",
+      "url": "/?page=actions"
+    }
   ]
 }
